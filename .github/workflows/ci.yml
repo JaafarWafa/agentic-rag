@@ -1,0 +1,25 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test-and-eval:
+    runs-on: ubuntu-latest
+    services:
+      pg:
+        image: pgvector/pgvector:pg16
+        env: {POSTGRES_USER: rag, POSTGRES_PASSWORD: rag, POSTGRES_DB: rag}
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U rag" --health-interval 3s --health-retries 20
+    env:
+      LLM_PROVIDER: offline
+      TEST_PG_URL: postgresql://rag:rag@localhost:5432/rag
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements-dev.txt
+      - run: pytest -q
+      # Quality gates: fail the build if hallucination rate, accuracy, refusal or RBAC leak regress
+      - run: python -m evals.run_eval --label "ci-${GITHUB_SHA::7}" --gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: eval-results, path: evals/results/}

@@ -1,0 +1,26 @@
+# Vendor Contract Playbook
+Legal Department - RESTRICTED - negotiation positions for supplier agreements
+
+## 1. Purpose
+This playbook gives the Legal department's standard positions and fallback positions when negotiating contracts with suppliers, subcontracted carriers and technology vendors. Deviations beyond the fallback positions must be escalated to the General Counsel.
+
+## 2. Limitation of Liability
+Standard position: the supplier's total liability is capped at 200% of the fees paid in the 12 months before the claim. Fallback position: a cap of 100% of the annual fees. Liability for data protection breaches, confidentiality breaches, gross negligence and wilful misconduct must always be uncapped.
+
+## 3. Payment Terms
+Standard payment terms are 60 days from the end of the month in which a valid invoice is received. Shorter terms of 30 days may be accepted for small suppliers with annual contract value below 500,000 MAD. Advance payments are not allowed without approval from the Finance Director.
+
+## 4. Governing Law and Disputes
+Contracts are governed by Moroccan law, with disputes settled by the commercial court of Casablanca. For international technology vendors, arbitration under the rules of the International Chamber of Commerce, seated in Paris, is an acceptable fallback.
+
+## 5. Termination
+Atlas Freight must always have the right to terminate for convenience with 90 days' written notice. Suppliers may only terminate for cause, after a 30-day cure period.
+
+## 6. Data Protection
+Any supplier processing personal data must sign the company data processing agreement. Sub-processors require prior written consent, and data may not be transferred outside Morocco without the approval of the Data Protection Officer.
+
+## 7. Insurance
+Subcontracted carriers must hold goods-in-transit insurance of at least 1,000,000 MAD per vehicle and provide an updated certificate every year.
+
+## 8. Approval Thresholds
+Contracts with a total value above 2,000,000 MAD must be signed by the Chief Executive Officer. Contracts between 500,000 and 2,000,000 MAD can be signed by the Chief Financial Officer.

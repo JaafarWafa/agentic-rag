@@ -1,0 +1,49 @@
+DATA BREACH RESPONSE PROCEDURE
+Owner: Legal & Compliance   |   Classification: RESTRICTED
+
+
+1. SCOPE
+
+This procedure applies to any confirmed or suspected breach of personal data held by
+Atlas Freight, including customer, employee and supplier data.
+
+
+2. RESPONSE TEAM
+
+The Breach Response Team is chaired by the Data Protection Officer (DPO) and includes
+the CISO, the General Counsel, the Head of Communications and the owner of the
+affected system. The team must convene within 4 hours of a breach being confirmed.
+
+
+3. ASSESSMENT
+
+The team assesses the nature of the data, the number of people affected, and the
+likely consequences for them. Every breach, even a minor one, is recorded in the
+breach register maintained by the DPO.
+
+
+4. NOTIFICATION OF THE AUTHORITY
+
+If the breach is likely to result in a risk to individuals, the DPO notifies the
+national data protection authority within 72 hours of becoming aware of it. If the
+full information is not yet available, an initial notification is made within the
+72 hours and completed later.
+
+
+5. NOTIFICATION OF INDIVIDUALS
+
+Where the breach is likely to result in a high risk to individuals, the affected
+people are informed without undue delay, in clear language, with advice on how to
+protect themselves. The Head of Communications approves the wording.
+
+
+6. EVIDENCE PRESERVATION
+
+Logs, affected devices and system images must be preserved. No system may be wiped
+or rebuilt before the CISO confirms that forensic images have been taken.
+
+
+7. POST-INCIDENT REVIEW
+
+A post-incident review is completed within 30 days of closing the breach, and the
+lessons learned are presented to the Executive Committee.

@@ -1,0 +1,13 @@
+{
+  "company_faq.md": {"roles": ["public"], "title": "Company FAQ"},
+  "code_of_conduct.md": {"roles": ["public"], "title": "Code of Conduct"},
+  "employee_handbook.md": {"roles": ["employee"], "title": "Employee Handbook"},
+  "remote_work_policy.html": {"roles": ["employee"], "title": "Remote Work Policy"},
+  "it_security_policy.txt": {"roles": ["employee"], "title": "Information Security Policy"},
+  "travel_expense_policy.pdf": {"roles": ["employee"], "title": "Travel and Expense Policy"},
+  "compensation_bands_2026.md": {"roles": ["hr"], "title": "Compensation Framework 2026"},
+  "disciplinary_procedure.pdf": {"roles": ["hr"], "title": "Disciplinary Procedure"},
+  "litigation_hold_procedure.md": {"roles": ["legal"], "title": "Litigation Hold Procedure"},
+  "vendor_contract_playbook.pdf": {"roles": ["legal"], "title": "Vendor Contract Playbook"},
+  "data_breach_response.txt": {"roles": ["legal"], "title": "Data Breach Response Procedure"}
+}

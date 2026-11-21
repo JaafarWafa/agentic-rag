@@ -1,0 +1,70 @@
+ATLAS   FREIGHT   -   INFORMATION   SECURITY   POLICY
+Document ID: SEC-001        Classification: Internal        Rev. 7
+
+
+PURPOSE
+
+This policy sets the minimum security rules for everyone who uses Atlas Freight
+systems, devices or data, including contractors.
+
+
+PASSWORDS AND AUTHENTICATION
+
+Passwords must be at least 14 characters long. Passphrases made of several
+words are encouraged.   Passwords must never be reused across systems and must
+never be shared, including with IT staff.
+
+Multi-factor authentication (MFA) is mandatory for email, the VPN, the HR portal
+and all cloud applications. Hardware security keys are issued to administrators.
+
+Passwords are not rotated on a schedule. They must be changed immediately if
+there is any suspicion that they have been exposed.
+
+
+DEVICES
+
+Company laptops are encrypted with full-disk encryption and managed by IT.
+Software may only be installed from the company software catalogue. Personal
+devices may access email only through the approved mobile app, and never
+connect to the internal network.
+
+Lost or stolen devices must be reported to the IT Service Desk within 1 hour of
+discovery, by phone on extension 4444 or by email to security@atlasfreight.example.
+
+
+PHISHING AND SUSPICIOUS EMAIL
+
+Do not click links or open attachments in unexpected emails. Report suspicious
+emails with the "Report Phishing" button in Outlook. The security team reviews
+every report within 4 business hours.
+
+Do not click links or open attachments in unexpected emails. Report suspicious
+emails with the "Report Phishing" button in Outlook. The security team reviews
+every report within 4 business hours.
+
+Every employee completes the phishing awareness training at onboarding and then
+once per year. Simulated phishing campaigns are run every quarter.
+
+
+DATA CLASSIFICATION
+
+Data is classified as Public, Internal, Confidential or Restricted. Customer
+shipment data and personal data are Confidential. Payroll and legal case files
+are Restricted. Restricted data may not be stored on removable media or sent to
+personal email accounts.
+
+
+INCIDENT REPORTING
+
+Any suspected security incident must be reported to the IT Service Desk
+immediately. Employees must not attempt to investigate an incident themselves.
+The handling of confirmed personal-data breaches is governed by the separate
+Data Breach Response Procedure, owned by the Legal department.
+
+
+EXCEPTIONS
+
+Exceptions to this policy must be approved in writing by the Chief Information
+Security Officer and are valid for a maximum of 12 months.
+
+                                                      -- end of document --

@@ -1,0 +1,19 @@
+# Render blueprint (free tier). Push the repo, then "New > Blueprint" in Render.
+# The free web service sleeps when idle and its disk is ephemeral; the SQLite index is
+# rebuilt from corpus/ on boot (a few seconds). For persistence, point DATABASE_URL at a
+# free Postgres with pgvector (Neon or Supabase) - the code switches backend automatically.
+services:
+  - type: web
+    name: agentic-rag
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: LLM_PROVIDER
+        value: auto
+      - key: ANTHROPIC_API_KEY
+        sync: false        # set in the dashboard; leave empty for offline mode
+      - key: DATABASE_URL
+        sync: false        # optional: postgresql://... (pgvector); default SQLite
+      - key: API_KEYS
+        sync: false        # JSON map of key -> {user, roles}; replaces the demo keys

@@ -1,0 +1,3635 @@
+{
+  "id": "20261120T140652-4e32",
+  "created_at": "2026-11-20T14:06:52.806220+00:00",
+  "label": "v1-dense-only",
+  "config": {
+    "llm": "offline-extractive",
+    "embedder": "hashing-768",
+    "reranker": "lexical",
+    "store": "SQLiteStore",
+    "hybrid": false,
+    "use_rerank": false,
+    "allow_refine": false,
+    "evidence_threshold": 0.0,
+    "candidate_k": 20,
+    "final_k": 5,
+    "max_search_rounds": 3,
+    "chunk_target_words": 140,
+    "judge": "heuristic",
+    "dataset_size": 82
+  },
+  "metrics": {
+    "n": 82,
+    "answer_accuracy": 0.9492,
+    "strict_accuracy": 0.9492,
+    "retrieval_hit_rate": 0.9831,
+    "mrr": 0.9534,
+    "citation_precision": 0.8563,
+    "groundedness": 1.0,
+    "answer_relevance": 0.8343,
+    "hallucination_rate": 0.1951,
+    "unsupported_claim_rate": 0.0,
+    "false_refusal_rate": 0.0169,
+    "correct_refusal_rate": 0.3043,
+    "rbac_leak_rate": 0.0,
+    "avg_searches": 1.0,
+    "latency_p50_ms": 3.6,
+    "latency_p95_ms": 4.4,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "by_category": {
+      "answerable": {
+        "n": 54,
+        "refused": 0.0,
+        "fact_recall": 0.9815,
+        "hallucinated": 0.0
+      },
+      "paraphrase": {
+        "n": 5,
+        "refused": 0.2,
+        "fact_recall": 0.6,
+        "hallucinated": 0.0
+      },
+      "restricted": {
+        "n": 11,
+        "refused": 0.0909,
+        "fact_recall": null,
+        "hallucinated": 0.9091
+      },
+      "unanswerable": {
+        "n": 12,
+        "refused": 0.5,
+        "fact_recall": null,
+        "hallucinated": 0.5
+      }
+    },
+    "test_split": {
+      "n": 27,
+      "answer_accuracy": 0.9375,
+      "hallucination_rate": 0.2222,
+      "false_refusal_rate": 0.0625,
+      "correct_refusal_rate": 0.4545,
+      "rbac_leak_rate": 0.0
+    }
+  },
+  "n": 82,
+  "rows": [
+    {
+      "id": "A01",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How many days of paid annual leave do full-time employees get per year?",
+      "answer": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c1] After five years of continuous service, the entitlement increases by 1.5 days for each additional block of five years, up to a maximum of 30 days per year. [c1] Atlas Freight pays full salary for the first 10 days of certified sick leave per calendar year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 3. Sick Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days of paid annual leave do full-time employees get per year?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.818,
+      "claims": [
+        {
+          "claim": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year.  After five years of continuous service, the entitlement increases by 1.5 days",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 5.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A02",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How far in advance must I submit a leave request?",
+      "answer": "A medical certificate is required for any absence longer than 3 consecutive days, and must be submitted within 48 hours of the employee's return. [c1] Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave. [c2] Expense claims must be submitted in the expense tool within 30 days of the end of the trip, with digital copies of all receipts above 100 MAD. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 3. Sick Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "7. Submitting Expense Claims"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How far in advance must I submit a leave request?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "A medical certificate is required for any absence longer than 3 consecutive days, and must be submitted within 48 hours of the employee's return.  Leave requests must be submitted through the HR porta",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A03",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How many unused leave days can I carry over to next year?",
+      "answer": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c1] After five years of continuous service, the entitlement increases by 1.5 days for each additional block of five years, up to a maximum of 30 days per year. [c1] Up to 5 unused days may be carried over into the next calendar year. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many unused leave days can I carry over to next year?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.857,
+      "claims": [
+        {
+          "claim": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year.  After five years of continuous service, the entitlement increases by 1.5 days",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A04",
+      "category": "answerable",
+      "role": "employee",
+      "question": "When do carried-over leave days expire?",
+      "answer": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c1] Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave. [c1] Carried-over days expire on 31 March. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "When do carried-over leave days expire?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year.  Leave requests must be submitted through the HR portal at least 10 working da",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A05",
+      "category": "answerable",
+      "role": "employee",
+      "question": "When do I need a medical certificate for sick leave?",
+      "answer": "A medical certificate is required for any absence longer than 3 consecutive days, and must be submitted within 48 hours of the employee's return. [c1] Atlas Freight pays full salary for the first 10 days of certified sick leave per calendar year. [c1] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 3. Sick Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "When do I need a medical certificate for sick leave?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "A medical certificate is required for any absence longer than 3 consecutive days, and must be submitted within 48 hours of the employee's return.  Atlas Freight pays full salary for the first 10 days ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A06",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How long is maternity leave?",
+      "answer": "Birth mothers are entitled to 14 weeks of paid maternity leave. [c1] The leave can start up to 6 weeks before the expected due date. [c1] The other parent is entitled to 10 working days of paid paternity leave, to be taken within 30 days of the birth or adoption. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 4. Parental Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long is maternity leave?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Birth mothers are entitled to 14 weeks of paid maternity leave.  The leave can start up to 6 weeks before the expected due date.  The other parent is entitled to 10 working days of paid paternity leav",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A07",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How many days of paternity leave does the other parent get?",
+      "answer": "The other parent is entitled to 10 working days of paid paternity leave, to be taken within 30 days of the birth or adoption. [c1] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c2] Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 4. Parental Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days of paternity leave does the other parent get?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "The other parent is entitled to 10 working days of paid paternity leave, to be taken within 30 days of the birth or adoption.  Full-time employees accrue 1.5 working days of paid annual leave per mont",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A08",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the overtime rate on weekends?",
+      "answer": "Employees required to work on a public holiday receive a compensatory day off in addition to the overtime rate. [c1] The standard working week is 44 hours, Monday to Friday, with core hours from 09:30 to 16:00. [c2] Approved overtime is paid at 125% of the hourly rate on weekdays and 150% on weekends and public holidays. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 5. Public Holidays"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 1. Working Hours"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the overtime rate on weekends?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Employees required to work on a public holiday receive a compensatory day off in addition to the overtime rate.  The standard working week is 44 hours, Monday to Friday, with core hours from 09:30 to ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.7,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A09",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How long is the probation period for a managerial role?",
+      "answer": "New employees serve a probation period of 3 months for non-managerial roles and 6 months for managerial roles. [c1] The probation period can be extended once, by up to the same length, with written notice. [c1] Employees in office-based roles are eligible for hybrid work after completing their probation period. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 6. Probation"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Eligibility"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long is the probation period for a managerial role?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "New employees serve a probation period of 3 months for non-managerial roles and 6 months for managerial roles.  The probation period can be extended once, by up to the same length, with written notice",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A10",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the annual learning budget per employee?",
+      "answer": "Each employee has an annual learning budget of 6,000 MAD for courses, certifications and conference tickets. [c1] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c2] After five years of continuous service, the entitlement increases by 1.5 days for each additional block of five years, up to a maximum of 30 days per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 7. Benefits"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the annual learning budget per employee?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Each employee has an annual learning budget of 6,000 MAD for courses, certifications and conference tickets.  Full-time employees accrue 1.5 working days of paid annual leave per month of service, whi",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A11",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What percentage of hospitalisation costs does the health insurance cover?",
+      "answer": "All permanent employees are enrolled in the group health insurance plan from their first day. [c1] The plan covers 80% of outpatient costs and 90% of hospitalisation costs. [c1] After that, the employee is covered by the health insurance scheme described in the Benefits section. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 7. Benefits"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 3. Sick Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What percentage of hospitalisation costs does the health insurance cover?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.833,
+      "claims": [
+        {
+          "claim": "All permanent employees are enrolled in the group health insurance plan from their first day.  The plan covers 80% of outpatient costs and 90% of hospitalisation costs.  After that, the employee is co",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A12",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What notice period applies if I resign after 3 years of service?",
+      "answer": "Employees who resign must give written notice of 1 month if they have less than 1 year of service, 2 months for 1 to 5 years, and 3 months for more than 5 years. [c1] Notice periods for managers are 3 months regardless of tenure. [c1] New employees serve a probation period of 3 months for non-managerial roles and 6 months for managerial roles. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 8. Resignation and Notice"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 6. Probation"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What notice period applies if I resign after 3 years of service?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.857,
+      "claims": [
+        {
+          "claim": "Employees who resign must give written notice of 1 month if they have less than 1 year of service, 2 months for 1 to 5 years, and 3 months for more than 5 years.  Notice periods for managers are 3 mon",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A13",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How much is the monthly meal allowance?",
+      "answer": "- Hybrid employees receive a home-office allowance of 250 MAD per month to cover internet and electricity costs. [c1] Employees who resign must give written notice of 1 month if they have less than 1 year of service, 2 months for 1 to 5 years, and 3 months for more than 5 years. [c2] Notice periods for managers are 3 months regardless of tenure. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Equipment and allowance"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 8. Resignation and Notice"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much is the monthly meal allowance?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 0.5,
+      "citation_precision": 0.5,
+      "fact_recall": 0.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Hybrid employees receive a home-office allowance of 250 MAD per month to cover internet and electricity costs.  Employees who resign must give written notice of 1 month if they have less than 1 year o",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A14",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How many days per week can I work remotely?",
+      "answer": "Eligible employees may work remotely up to 2 days per week. [c1] Employees may work from another country for a maximum of 20 working days per calendar year, subject to manager approval submitted at least 15 days in advance. [c2] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Hybrid schedule"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Working from abroad"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days per week can I work remotely?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.833,
+      "claims": [
+        {
+          "claim": "Eligible employees may work remotely up to 2 days per week.  Employees may work from another country for a maximum of 20 working days per calendar year, subject to manager approval submitted at least ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.2,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A15",
+      "category": "answerable",
+      "role": "employee",
+      "question": "Which days are anchor days in the office?",
+      "answer": "Eligible employees may work remotely up to 2 days per week. [c1] Tuesday and Thursday are anchor days on which all team members are expected in the office. [c1] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Hybrid schedule"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Which days are anchor days in the office?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Eligible employees may work remotely up to 2 days per week.  Tuesday and Thursday are anchor days on which all team members are expected in the office.  Full-time employees accrue 1.5 working days of ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A16",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How many days per year can I work from abroad?",
+      "answer": "Employees may work from another country for a maximum of 20 working days per calendar year, subject to manager approval submitted at least 15 days in advance. [c1] Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c2] After five years of continuous service, the entitlement increases by 1.5 days for each additional block of five years, up to a maximum of 30 days per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Working from abroad"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days per year can I work from abroad?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Employees may work from another country for a maximum of 20 working days per calendar year, subject to manager approval submitted at least 15 days in advance.  Full-time employees accrue 1.5 working d",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.2,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A17",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How much is the home-office allowance?",
+      "answer": "- Hybrid employees receive a home-office allowance of 250 MAD per month to cover internet and electricity costs. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Equipment and allowance"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much is the home-office allowance?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Hybrid employees receive a home-office allowance of 250 MAD per month to cover internet and electricity costs.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A18",
+      "category": "answerable",
+      "role": "employee",
+      "question": "Are warehouse staff eligible for hybrid work?",
+      "answer": "Employees in office-based roles are eligible for hybrid work after completing their probation period. [c1] Warehouse, fleet and on-site customer roles are not eligible because the work must be performed on site. [c1] Warehouse staff work in three rotating shifts. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Eligibility"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 1. Working Hours"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Are warehouse staff eligible for hybrid work?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Employees in office-based roles are eligible for hybrid work after completing their probation period.  Warehouse, fleet and on-site customer roles are not eligible because the work must be performed o",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A19",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the minimum password length?",
+      "answer": "Passwords must be at least 14 characters long. [c1] Passwords must never be reused across systems and must never be shared, including with IT staff. [c1] Passwords are not rotated on a schedule. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Passwords And Authentication"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the minimum password length?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Passwords must be at least 14 characters long.  Passwords must never be reused across systems and must never be shared, including with IT staff.  Passwords are not rotated on a schedule.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.2,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A20",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How quickly must I report a lost or stolen laptop?",
+      "answer": "Company laptops are encrypted with full-disk encryption and managed by IT. [c1] Lost or stolen devices must be reported to the IT Service Desk within 1 hour of discovery, by phone on extension 4444 or by email to security@atlasfreight.example. [c1] Any suspected security incident must be reported to the IT Service Desk immediately. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Devices"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Incident Reporting"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How quickly must I report a lost or stolen laptop?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.833,
+      "claims": [
+        {
+          "claim": "Company laptops are encrypted with full-disk encryption and managed by IT.  Lost or stolen devices must be reported to the IT Service Desk within 1 hour of discovery, by phone on extension 4444 or by ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A21",
+      "category": "answerable",
+      "role": "employee",
+      "question": "Is multi-factor authentication required for the VPN?",
+      "answer": "Multi-factor authentication (MFA) is mandatory for email, the VPN, the HR portal and all cloud applications. [c1] Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Passwords And Authentication"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "2. Air Travel"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Is multi-factor authentication required for the VPN?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Multi-factor authentication (MFA) is mandatory for email, the VPN, the HR portal and all cloud applications.  Business class is allowed only for flights longer than 6 hours of continuous flying time, ",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A22",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How often do passwords have to be rotated?",
+      "answer": "Passwords must be at least 14 characters long. [c1] Passwords must never be reused across systems and must never be shared, including with IT staff. [c1] Passwords are not rotated on a schedule. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Passwords And Authentication"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How often do passwords have to be rotated?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Passwords must be at least 14 characters long.  Passwords must never be reused across systems and must never be shared, including with IT staff.  Passwords are not rotated on a schedule.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A23",
+      "category": "answerable",
+      "role": "employee",
+      "question": "How do I report a suspicious email?",
+      "answer": "Do not click links or open attachments in unexpected emails. [c1] Report suspicious emails with the \"Report Phishing\" button in Outlook. [c1] The security team reviews every report within 4 business hours. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Phishing And Suspicious Email"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How do I report a suspicious email?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Do not click links or open attachments in unexpected emails.  Report suspicious emails with the \"Report Phishing\" button in Outlook.  The security team reviews every report within 4 business hours.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A24",
+      "category": "answerable",
+      "role": "employee",
+      "question": "Which class do I fly for a 3-hour business flight?",
+      "answer": "Economy class is the standard for all flights. [c1] Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee. [c1] Employees should choose the lowest logical fare available within two hours of their preferred departure time. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "2. Air Travel"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Which class do I fly for a 3-hour business flight?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Economy class is the standard for all flights.  Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A25",
+      "category": "answerable",
+      "role": "employee",
+      "question": "When is business class allowed on flights?",
+      "answer": "Economy class is the standard for all flights. [c1] Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee. [c1] Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "2. Air Travel"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Gifts and Hospitality"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "When is business class allowed on flights?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Economy class is the standard for all flights.  Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A26",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the mileage reimbursement rate for using my personal car?",
+      "answer": "Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c1] Customer shipment data and personal data are Confidential. [c2] Restricted data may not be stored on removable media or sent to personal email accounts. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Data Classification"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the mileage reimbursement rate for using my personal car?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking.  Customer shipment data and personal data are Confidential.  Rest",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A27",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the nightly hotel cap in Morocco?",
+      "answer": "Hotel costs are reimbursed up to a nightly cap of 1,200 MAD in Morocco and 180 EUR abroad, including breakfast. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "4. Accommodation"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the nightly hotel cap in Morocco?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Hotel costs are reimbursed up to a nightly cap of 1,200 MAD in Morocco and 180 EUR abroad, including breakfast.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A28",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the per diem when travelling abroad?",
+      "answer": "For travel with an overnight stay, employees receive a daily allowance (per diem) of 400 MAD in Morocco and 60 EUR abroad to cover meals and small expenses. [c1] Receipts are not required for the per diem. [c1] Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "5. Meals and Per Diem"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the per diem when travelling abroad?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "For travel with an overnight stay, employees receive a daily allowance (per diem) of 400 MAD in Morocco and 60 EUR abroad to cover meals and small expenses.  Receipts are not required for the per diem",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A29",
+      "category": "answerable",
+      "role": "employee",
+      "question": "What is the deadline to submit an expense claim after a trip?",
+      "answer": "Expense claims must be submitted in the expense tool within 30 days of the end of the trip, with digital copies of all receipts above 100 MAD. [c1] Claims submitted after 90 days are rejected. [c1] Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "7. Submitting Expense Claims"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Claims for damaged goods"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the deadline to submit an expense claim after a trip?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "Expense claims must be submitted in the expense tool within 30 days of the end of the trip, with digital copies of all receipts above 100 MAD.  Claims submitted after 90 days are rejected.  Claims for",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A30",
+      "category": "answerable",
+      "role": "employee",
+      "question": "Is alcohol reimbursed on business trips?",
+      "answer": "Alcohol, personal entertainment, fines, traffic violations, minibar charges and loyalty-programme upgrades are never reimbursed. [c1] All business travel must be booked through the company travel desk, at least 14 days before departure for international trips and 5 days before departure for domestic trips. [c2] Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "6. Alcohol and Non-Reimbursable Expenses"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "1. Booking Travel"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Is alcohol reimbursed on business trips?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Alcohol, personal entertainment, fines, traffic violations, minibar charges and loyalty-programme upgrades are never reimbursed.  All business travel must be booked through the company travel desk, at",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A31",
+      "category": "answerable",
+      "role": "public",
+      "question": "What is the maximum value of a gift I can accept from a business partner?",
+      "answer": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year. [c1] Cash, vouchers and gift cards must never be accepted, whatever their value. [c1] Employees must never offer, promise or give anything of value to a public official or a business partner to obtain an improper advantage. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Gifts and Hospitality"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Anti-Bribery"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the maximum value of a gift I can accept from a business partner?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year.  Cash, vouchers and",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A32",
+      "category": "answerable",
+      "role": "public",
+      "question": "Can I accept a gift card from a supplier?",
+      "answer": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year. [c1] Cash, vouchers and gift cards must never be accepted, whatever their value. [c1] All gifts and invitations received above 200 MAD must be recorded in the gifts register within 5 working days. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Gifts and Hospitality"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Can I accept a gift card from a supplier?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year.  Cash, vouchers and",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A33",
+      "category": "answerable",
+      "role": "public",
+      "question": "Is the ethics hotline available at night?",
+      "answer": "Concerns about fraud, corruption, safety or any breach of this Code can be raised anonymously through the ethics hotline, available 24 hours a day, 7 days a week, by phone or through the online form at ethics.atlasfreight.example. [c1] Employees who experience or witness harassment should report it to their manager, to the People Team, or through the ethics hotline. [c2] Our customer service team is available Monday to Saturday from 08:00 to 20:00. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Speaking Up (Whistleblowing)"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Respect and Anti-Harassment"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Customer service"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Is the ethics hotline available at night?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Concerns about fraud, corruption, safety or any breach of this Code can be raised anonymously through the ethics hotline, available 24 hours a day, 7 days a week, by phone or through the online form a",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A34",
+      "category": "answerable",
+      "role": "public",
+      "question": "How quickly are harassment reports investigated?",
+      "answer": "Atlas Freight does not tolerate harassment, discrimination or bullying of any kind. [c1] Employees who experience or witness harassment should report it to their manager, to the People Team, or through the ethics hotline. [c1] Reports are investigated within 10 working days. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Respect and Anti-Harassment"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How quickly are harassment reports investigated?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Atlas Freight does not tolerate harassment, discrimination or bullying of any kind.  Employees who experience or witness harassment should report it to their manager, to the People Team, or through th",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A35",
+      "category": "answerable",
+      "role": "public",
+      "question": "What are the customer service opening hours?",
+      "answer": "Our customer service team is available Monday to Saturday from 08:00 to 20:00. [c1] Customers can reach us by phone, by email at support@atlasfreight.example, or through the live chat on our website. [c1] The average response time for email is under 4 hours. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Customer service"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What are the customer service opening hours?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Our customer service team is available Monday to Saturday from 08:00 to 20:00.  Customers can reach us by phone, by email at support@atlasfreight.example, or through the live chat on our website.  The",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A36",
+      "category": "answerable",
+      "role": "public",
+      "question": "How long do I have to file a claim for damaged goods?",
+      "answer": "Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website. [c1] Photos of the damaged packaging and goods must be attached. [c1] Claims are answered within 21 days. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Claims for damaged goods"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long do I have to file a claim for damaged goods?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.6,
+      "claims": [
+        {
+          "claim": "Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website.  Photos of the damaged packaging and goods must be attached.  Claims are answered wi",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.2,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A37",
+      "category": "answerable",
+      "role": "public",
+      "question": "Where is the head office located?",
+      "answer": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > About us"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Where is the head office located?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A38",
+      "category": "answerable",
+      "role": "public",
+      "question": "How long is the summer internship programme?",
+      "answer": "Atlas Freight runs a paid summer internship programme of 8 weeks every July and August. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Careers"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long is the summer internship programme?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Atlas Freight runs a paid summer internship programme of 8 weeks every July and August.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 2.2,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A39",
+      "category": "answerable",
+      "role": "hr",
+      "question": "What is the salary range for Band C?",
+      "answer": "Band C and above are eligible for an annual bonus. [c1] Target bonuses are 8% of base salary for Band C, 12% for Band D and 20% for Band E. [c1] - Band C (specialists, analysts, engineers): 150,000 to 260,000 [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Variable Pay"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Salary Bands"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the salary range for Band C?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Band C and above are eligible for an annual bonus.  Target bonuses are 8% of base salary for Band C, 12% for Band D and 20% for Band E.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        },
+        {
+          "claim": "Band C (specialists, analysts, engineers): 150,000 to 260,000",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A40",
+      "category": "answerable",
+      "role": "hr",
+      "question": "What is the 2026 merit budget?",
+      "answer": "The 2026 merit budget is 4.5% of the total payroll. [c1] - Ratings 1 and 2: no merit increase Promotions to a higher band come with an increase of at least 8%. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Annual Salary Review"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the 2026 merit budget?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "The 2026 merit budget is 4.5% of the total payroll.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        },
+        {
+          "claim": "Ratings 1 and 2: no merit increase Promotions to a higher band come with an increase of at least 8%.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A41",
+      "category": "answerable",
+      "role": "hr",
+      "question": "What is the target bonus for Band D managers?",
+      "answer": "Target bonuses are 8% of base salary for Band C, 12% for Band D and 20% for Band E. [c1] Drivers in Band A and B receive a monthly safety bonus of 600 MAD for each month without an at-fault incident. [c1] - Band D (managers): 260,000 to 420,000 [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Variable Pay"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Salary Bands"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the target bonus for Band D managers?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Target bonuses are 8% of base salary for Band C, 12% for Band D and 20% for Band E.  Drivers in Band A and B receive a monthly safety bonus of 600 MAD for each month without an at-fault incident.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        },
+        {
+          "claim": "Band D (managers): 260,000 to 420,000",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A42",
+      "category": "answerable",
+      "role": "hr",
+      "question": "How much is the drivers' monthly safety bonus?",
+      "answer": "Band C and above are eligible for an annual bonus. [c1] Drivers in Band A and B receive a monthly safety bonus of 600 MAD for each month without an at-fault incident. [c1] A verbal warning stays on file for 6 months, a written warning for 12 months and a final written warning for 18 months. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Variable Pay"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "5. Sanctions"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much is the drivers' monthly safety bonus?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "Band C and above are eligible for an annual bonus.  Drivers in Band A and B receive a monthly safety bonus of 600 MAD for each month without an at-fault incident.  A verbal warning stays on file for 6",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A43",
+      "category": "answerable",
+      "role": "hr",
+      "question": "How long does a written warning stay on file?",
+      "answer": "The possible sanctions, in order of severity, are: a verbal warning, a written warning, a final written warning, and dismissal. [c1] A verbal warning stays on file for 6 months, a written warning for 12 months and a final written warning for 18 months. [c1] Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "5. Sanctions"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Gifts and Hospitality"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long does a written warning stay on file?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "The possible sanctions, in order of severity, are: a verbal warning, a written warning, a final written warning, and dismissal.  A verbal warning stays on file for 6 months, a written warning for 12 m",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A44",
+      "category": "answerable",
+      "role": "hr",
+      "question": "How many days does an employee have to appeal a disciplinary sanction?",
+      "answer": "The employee can appeal any sanction in writing within 10 working days of receiving the decision. [c1] The appeal is heard by a manager more senior than the one who made the original decision, and the appeal decision is final. [c1] The employee is invited in writing to a disciplinary hearing with at least 5 working days' notice. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "6. Appeals"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "4. Disciplinary Hearing"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days does an employee have to appeal a disciplinary sanction?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.833,
+      "claims": [
+        {
+          "claim": "The employee can appeal any sanction in writing within 10 working days of receiving the decision.  The appeal is heard by a manager more senior than the one who made the original decision, and the app",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.7,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A45",
+      "category": "answerable",
+      "role": "hr",
+      "question": "How much notice must be given before a disciplinary hearing?",
+      "answer": "The employee is invited in writing to a disciplinary hearing with at least 5 working days' notice. [c1] Disciplinary Procedure People Team [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "4. Disciplinary Hearing"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "disciplinary-procedure-a7281d9a",
+          "section": "Disciplinary Procedure"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much notice must be given before a disciplinary hearing?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.5,
+      "claims": [
+        {
+          "claim": "The employee is invited in writing to a disciplinary hearing with at least 5 working days' notice.  Disciplinary Procedure People Team",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A46",
+      "category": "answerable",
+      "role": "legal",
+      "question": "How long do custodians have to acknowledge a litigation hold notice?",
+      "answer": "Legal sends a written hold notice to each custodian, meaning any employee likely to hold relevant information. [c1] Custodians must acknowledge the notice within 3 business days. [c1] IT must suspend automatic deletion for the mailboxes and systems in scope within 24 hours of receiving the hold notice. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "litigation-hold-procedure-da350035",
+          "section": "Litigation Hold Procedure > Notifying Custodians"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long do custodians have to acknowledge a litigation hold notice?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Legal sends a written hold notice to each custodian, meaning any employee likely to hold relevant information.  Custodians must acknowledge the notice within 3 business days.  IT must suspend automati",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A47",
+      "category": "answerable",
+      "role": "legal",
+      "question": "How quickly must IT suspend automatic deletion after a hold notice?",
+      "answer": "Custodians must acknowledge the notice within 3 business days. [c1] IT must suspend automatic deletion for the mailboxes and systems in scope within 24 hours of receiving the hold notice. [c1] Custodians must not delete, alter or move any data covered by the hold, even if normal retention rules would allow deletion. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "litigation-hold-procedure-da350035",
+          "section": "Litigation Hold Procedure > Notifying Custodians"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "litigation-hold-procedure-da350035",
+          "section": "Litigation Hold Procedure > Obligations During a Hold"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How quickly must IT suspend automatic deletion after a hold notice?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.857,
+      "claims": [
+        {
+          "claim": "Custodians must acknowledge the notice within 3 business days.  IT must suspend automatic deletion for the mailboxes and systems in scope within 24 hours of receiving the hold notice.  Custodians must",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A48",
+      "category": "answerable",
+      "role": "legal",
+      "question": "What is our standard limitation of liability cap for suppliers?",
+      "answer": "Standard position: the supplier's total liability is capped at 200% of the fees paid in the 12 months before the claim. [c1] Fallback position: a cap of 100% of the annual fees. [c1] This playbook gives the Legal department's standard positions and fallback positions when negotiating contracts with suppliers, subcontracted carriers and technology vendors. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "2. Limitation of Liability"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "1. Purpose"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is our standard limitation of liability cap for suppliers?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.8,
+      "claims": [
+        {
+          "claim": "Standard position: the supplier's total liability is capped at 200% of the fees paid in the 12 months before the claim.  Fallback position: a cap of 100% of the annual fees.  This playbook gives the L",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A49",
+      "category": "answerable",
+      "role": "legal",
+      "question": "What are the standard payment terms for vendors?",
+      "answer": "Standard payment terms are 60 days from the end of the month in which a valid invoice is received. [c1] Shorter terms of 30 days may be accepted for small suppliers with annual contract value below 500,000 MAD. [c1] This playbook gives the Legal department's standard positions and fallback positions when negotiating contracts with suppliers, subcontracted carriers and technology vendors. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "3. Payment Terms"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "1. Purpose"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What are the standard payment terms for vendors?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Standard payment terms are 60 days from the end of the month in which a valid invoice is received.  Shorter terms of 30 days may be accepted for small suppliers with annual contract value below 500,00",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A50",
+      "category": "answerable",
+      "role": "legal",
+      "question": "Within how many hours must the data protection authority be notified of a breach?",
+      "answer": "If the breach is likely to result in a risk to individuals, the DPO notifies the national data protection authority within 72 hours of becoming aware of it. [c1] If the full information is not yet available, an initial notification is made within the 72 hours and completed later. [c1] The team must convene within 4 hours of a breach being confirmed. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "data-breach-response-c75a6952",
+          "section": "4. NOTIFICATION OF THE AUTHORITY"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "data-breach-response-c75a6952",
+          "section": "2. RESPONSE TEAM"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Within how many hours must the data protection authority be notified of a breach?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.889,
+      "claims": [
+        {
+          "claim": "If the breach is likely to result in a risk to individuals, the DPO notifies the national data protection authority within 72 hours of becoming aware of it.  If the full information is not yet availab",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A51",
+      "category": "answerable",
+      "role": "legal",
+      "question": "Who chairs the breach response team?",
+      "answer": "The Breach Response Team is chaired by the Data Protection Officer (DPO) and includes the CISO, the General Counsel, the Head of Communications and the owner of the affected system. [c1] The team must convene within 4 hours of a breach being confirmed. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "data-breach-response-c75a6952",
+          "section": "2. RESPONSE TEAM"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Who chairs the breach response team?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "The Breach Response Team is chaired by the Data Protection Officer (DPO) and includes the CISO, the General Counsel, the Head of Communications and the owner of the affected system.  The team must con",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A52",
+      "category": "answerable",
+      "role": "legal",
+      "question": "How much goods-in-transit insurance must subcontracted carriers hold?",
+      "answer": "Subcontracted carriers must hold goods-in-transit insurance of at least 1,000,000 MAD per vehicle and provide an updated certificate every year. [c1] This playbook gives the Legal department's standard positions and fallback positions when negotiating contracts with suppliers, subcontracted carriers and technology vendors. [c2] Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "7. Insurance"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "1. Purpose"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Claims for damaged goods"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much goods-in-transit insurance must subcontracted carriers hold?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 0.6666666666666666,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.875,
+      "claims": [
+        {
+          "claim": "Subcontracted carriers must hold goods-in-transit insurance of at least 1,000,000 MAD per vehicle and provide an updated certificate every year.  This playbook gives the Legal department's standard po",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A53",
+      "category": "answerable",
+      "role": "admin",
+      "question": "Who must sign a supplier contract worth 3,000,000 MAD?",
+      "answer": "Contracts with a total value above 2,000,000 MAD must be signed by the Chief Executive Officer. [c1] Contracts between 500,000 and 2,000,000 MAD can be signed by the Chief Financial Officer. [c1] Shorter terms of 30 days may be accepted for small suppliers with annual contract value below 500,000 MAD. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "8. Approval Thresholds"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "vendor-contract-playbook-2351b381",
+          "section": "3. Payment Terms"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Who must sign a supplier contract worth 3,000,000 MAD?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Contracts with a total value above 2,000,000 MAD must be signed by the Chief Executive Officer.  Contracts between 500,000 and 2,000,000 MAD can be signed by the Chief Financial Officer.  Shorter term",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "A54",
+      "category": "answerable",
+      "role": "hr",
+      "question": "What is the hotel cap per night abroad?",
+      "answer": "Hotel costs are reimbursed up to a nightly cap of 1,200 MAD in Morocco and 180 EUR abroad, including breakfast. [c1] For travel with an overnight stay, employees receive a daily allowance (per diem) of 400 MAD in Morocco and 60 EUR abroad to cover meals and small expenses. [c2] Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "4. Accommodation"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "5. Meals and Per Diem"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the hotel cap per night abroad?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Hotel costs are reimbursed up to a nightly cap of 1,200 MAD in Morocco and 180 EUR abroad, including breakfast.  For travel with an overnight stay, employees receive a daily allowance (per diem) of 40",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.8,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "P01",
+      "category": "paraphrase",
+      "role": "employee",
+      "question": "How much PTO do I get?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "How much PTO do I get?"
+      ],
+      "retrieval_hit": false,
+      "reciprocal_rank": 0.0,
+      "citation_precision": null,
+      "fact_recall": 0.0,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.7,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "P02",
+      "category": "paraphrase",
+      "role": "employee",
+      "question": "Can I expense my minibar?",
+      "answer": "Travel and Expense Policy Finance Department [c1] Alcohol, personal entertainment, fines, traffic violations, minibar charges and loyalty-programme upgrades are never reimbursed. [c2] Expense claims must be submitted in the expense tool within 30 days of the end of the trip, with digital copies of all receipts above 100 MAD. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "Travel and Expense Policy"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "6. Alcohol and Non-Reimbursable Expenses"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "7. Submitting Expense Claims"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Can I expense my minibar?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Travel and Expense Policy Finance Department  Alcohol, personal entertainment, fines, traffic violations, minibar charges and loyalty-programme upgrades are never reimbursed.  Expense claims must be s",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "P03",
+      "category": "paraphrase",
+      "role": "employee",
+      "question": "What should I do with a phishing email?",
+      "answer": "Do not click links or open attachments in unexpected emails. [c1] Report suspicious emails with the \"Report Phishing\" button in Outlook. [c1] Every employee completes the phishing awareness training at onboarding and then once per year. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Phishing And Suspicious Email"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What should I do with a phishing email?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "citation_precision": 1.0,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 1.0,
+      "claims": [
+        {
+          "claim": "Do not click links or open attachments in unexpected emails.  Report suspicious emails with the \"Report Phishing\" button in Outlook.  Every employee completes the phishing awareness training at onboar",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "P04",
+      "category": "paraphrase",
+      "role": "employee",
+      "question": "I'm pregnant, how much time off do I get?",
+      "answer": "Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee. [c1] Employees should choose the lowest logical fare available within two hours of their preferred departure time. [c1] The average response time for email is under 4 hours. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "2. Air Travel"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Customer service"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "I'm pregnant, how much time off do I get?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 0.25,
+      "citation_precision": 0.0,
+      "fact_recall": 0.0,
+      "groundedness": 1.0,
+      "relevance": 0.25,
+      "claims": [
+        {
+          "claim": "Business class is allowed only for flights longer than 6 hours of continuous flying time, and requires approval from a member of the Executive Committee.  Employees should choose the lowest logical fa",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "P05",
+      "category": "paraphrase",
+      "role": "employee",
+      "question": "How many days a week can I WFH?",
+      "answer": "Birth mothers are entitled to 14 weeks of paid maternity leave. [c1] The leave can start up to 6 weeks before the expected due date. [c1] Eligible employees may work remotely up to 2 days per week. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 4. Parental Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "remote-work-policy-ba8f4091",
+          "section": "Remote Work Policy > Hybrid schedule"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days a week can I WFH?"
+      ],
+      "retrieval_hit": true,
+      "reciprocal_rank": 0.5,
+      "citation_precision": 0.5,
+      "fact_recall": 1.0,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Birth mothers are entitled to 14 weeks of paid maternity leave.  The leave can start up to 6 weeks before the expected due date.  Eligible employees may work remotely up to 2 days per week.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U01",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "Does the company match pension contributions?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "Does the company match pension contributions?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U02",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the dress code for the office?",
+      "answer": "Breaches of this Code can lead to disciplinary action up to and including dismissal. [c1] This Code applies to all employees, directors, contractors and temporary staff. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Breaches of the Code"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the dress code for the office?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.333,
+      "claims": [
+        {
+          "claim": "Breaches of this Code can lead to disciplinary action up to and including dismissal.  This Code applies to all employees, directors, contractors and temporary staff.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U03",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "How many days of bereavement leave do I get?",
+      "answer": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year. [c1] Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave. [c1] The other parent is entitled to 10 working days of paid paternity leave, to be taken within 30 days of the birth or adoption. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 4. Parental Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days of bereavement leave do I get?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.4,
+      "claims": [
+        {
+          "claim": "Full-time employees accrue 1.5 working days of paid annual leave per month of service, which is 18 working days per year.  Leave requests must be submitted through the HR portal at least 10 working da",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U04",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the company's current share price?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "What is the company's current share price?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.1,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U05",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "Who won the 2022 football World Cup?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "Who won the 2022 football World Cup?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.9,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U06",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the parking policy at the Tangier hub?",
+      "answer": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech. [c2] Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c2",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > About us"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the parking policy at the Tangier hub?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.667,
+      "claims": [
+        {
+          "claim": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech.  Employees who use their person",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U07",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "Can I bring my dog to the office?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "Can I bring my dog to the office?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U08",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the company's policy on sabbaticals?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "What is the company's policy on sabbaticals?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U09",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "How do I request a company car?",
+      "answer": "Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave. [c1] Requests for more than 10 consecutive days need the approval of the department head. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 2. Annual Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How do I request a company car?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.5,
+      "claims": [
+        {
+          "claim": "Leave requests must be submitted through the HR portal at least 10 working days before the first day of leave.  Requests for more than 10 consecutive days need the approval of the department head.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U10",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the name of the CEO?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "What is the name of the CEO?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U11",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "What is the wifi password for the Casablanca office?",
+      "answer": "Passwords must be at least 14 characters long. [c1] Passwords must never be reused across systems and must never be shared, including with IT staff. [c1] Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Passwords And Authentication"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > About us"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the wifi password for the Casablanca office?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.75,
+      "claims": [
+        {
+          "claim": "Passwords must be at least 14 characters long.  Passwords must never be reused across systems and must never be shared, including with IT staff.  Atlas Freight SARL is a (fictional) road and sea freig",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "U12",
+      "category": "unanswerable",
+      "role": "admin",
+      "question": "Are gym memberships reimbursed?",
+      "answer": "Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking. [c1] Taxis and ride-hailing services are reimbursed when public transport is not practical. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "3. Ground Transport"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Are gym memberships reimbursed?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.333,
+      "claims": [
+        {
+          "claim": "Employees who use their personal car for business are reimbursed at 3.50 MAD per kilometre, in addition to motorway tolls and parking.  Taxis and ride-hailing services are reimbursed when public trans",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R01",
+      "category": "restricted",
+      "role": "employee",
+      "question": "What is the salary range for Band D?",
+      "answer": "Atlas Freight pays full salary for the first 10 days of certified sick leave per calendar year. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 3. Sick Leave"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the salary range for Band D?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.25,
+      "claims": [
+        {
+          "claim": "Atlas Freight pays full salary for the first 10 days of certified sick leave per calendar year.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R02",
+      "category": "restricted",
+      "role": "public",
+      "question": "How many days of paid annual leave do employees get per year?",
+      "answer": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year. [c1] All gifts and invitations received above 200 MAD must be recorded in the gifts register within 5 working days. [c1] Reports are investigated within 10 working days. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Gifts and Hospitality"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Respect and Anti-Harassment"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How many days of paid annual leave do employees get per year?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.444,
+      "claims": [
+        {
+          "claim": "Employees may accept gifts or hospitality from business partners only if the value is under 500 MAD per occasion and the total from the same partner stays under 1,500 MAD per year.  All gifts and invi",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 2.7,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R03",
+      "category": "restricted",
+      "role": "employee",
+      "question": "How long does a final written warning stay on file?",
+      "answer": "The probation period can be extended once, by up to the same length, with written notice. [c1] Employees who resign must give written notice of 1 month if they have less than 1 year of service, 2 months for 1 to 5 years, and 3 months for more than 5 years. [c2] Final pay, including any unused annual leave, is settled within 30 days of the last working day. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 6. Probation"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 8. Resignation and Notice"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long does a final written warning stay on file?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.333,
+      "claims": [
+        {
+          "claim": "The probation period can be extended once, by up to the same length, with written notice.  Employees who resign must give written notice of 1 month if they have less than 1 year of service, 2 months f",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 4.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R04",
+      "category": "restricted",
+      "role": "employee",
+      "question": "What is the standard liability cap in vendor contracts?",
+      "answer": "Economy class is the standard for all flights. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c2",
+          "doc_id": "travel-expense-policy-a9337903",
+          "section": "2. Air Travel"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the standard liability cap in vendor contracts?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.2,
+      "claims": [
+        {
+          "claim": "Economy class is the standard for all flights.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 4.0,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R05",
+      "category": "restricted",
+      "role": "hr",
+      "question": "How long do custodians have to acknowledge a litigation hold notice?",
+      "answer": "The probation period can be extended once, by up to the same length, with written notice. [c2] During probation, either party may end the employment with 7 days' notice. [c2]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c2",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 6. Probation"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How long do custodians have to acknowledge a litigation hold notice?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.167,
+      "claims": [
+        {
+          "claim": "The probation period can be extended once, by up to the same length, with written notice.  During probation, either party may end the employment with 7 days' notice.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R06",
+      "category": "restricted",
+      "role": "legal",
+      "question": "What is the 2026 merit budget?",
+      "answer": "As of Q3 2026 there are 4 active holds, including the customs dispute with a former freight forwarder (matter reference LIT-2025-017). [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c3",
+          "doc_id": "litigation-hold-procedure-da350035",
+          "section": "Litigation Hold Procedure > Current Matters"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the 2026 merit budget?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.333,
+      "claims": [
+        {
+          "claim": "As of Q3 2026 there are 4 active holds, including the customs dispute with a former freight forwarder (matter reference LIT-2025-017).",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R07",
+      "category": "restricted",
+      "role": "public",
+      "question": "How much is the home-office allowance?",
+      "answer": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > About us"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "How much is the home-office allowance?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.25,
+      "claims": [
+        {
+          "claim": "Atlas Freight SARL is a (fictional) road and sea freight company founded in 2009, with its head office in Casablanca and regional hubs in Tangier, Agadir and Marrakech.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 2.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R08",
+      "category": "restricted",
+      "role": "employee",
+      "question": "Within how many hours must the authority be notified of a personal data breach?",
+      "answer": "Customer shipment data and personal data are Confidential. [c1] Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website. [c2] The handling of confirmed personal-data breaches is governed by the separate Data Breach Response Procedure, owned by the Legal department. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Data Classification"
+        },
+        {
+          "marker": "c2",
+          "doc_id": "company-faq-198b7ea7",
+          "section": "Atlas Freight - Frequently Asked Questions > Claims for damaged goods"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "it-security-policy-9c9c82c3",
+          "section": "Incident Reporting"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Within how many hours must the authority be notified of a personal data breach?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.556,
+      "claims": [
+        {
+          "claim": "Customer shipment data and personal data are Confidential.  Claims for damaged or lost goods must be submitted within 7 days of delivery, using the claims form on our website.  The handling of confirm",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 4.3,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R09",
+      "category": "restricted",
+      "role": "public",
+      "question": "What is the mileage reimbursement rate for a personal car?",
+      "answer": "Employees must disclose any situation where their personal interests could conflict with those of Atlas Freight, such as a family member working for a supplier or a financial stake in a competitor. [c1]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c1",
+          "doc_id": "code-of-conduct-7b91d590",
+          "section": "Atlas Freight Code of Conduct > Conflicts of Interest"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "What is the mileage reimbursement rate for a personal car?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.2,
+      "claims": [
+        {
+          "claim": "Employees must disclose any situation where their personal interests could conflict with those of Atlas Freight, such as a family member working for a supplier or a financial stake in a competitor.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 2.5,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R10",
+      "category": "restricted",
+      "role": "employee",
+      "question": "How many active litigation holds are there?",
+      "answer": "I couldn't find this in the documents you have access to, so I can't answer it without guessing.",
+      "refused": true,
+      "route": "refused",
+      "citations": [],
+      "n_searches": 1,
+      "queries": [
+        "How many active litigation holds are there?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": null,
+      "relevance": null,
+      "claims": [],
+      "hallucinated": false,
+      "leaked": false,
+      "latency_ms": 3.6,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    {
+      "id": "R11",
+      "category": "restricted",
+      "role": "hr",
+      "question": "Who must sign contracts above 2,000,000 MAD?",
+      "answer": "- Band A (operators, drivers, warehouse associates): 60,000 to 96,000 [c2] - Band B (coordinators, senior drivers, team leads): 96,000 to 150,000 [c2] Each employee has an annual learning budget of 6,000 MAD for courses, certifications and conference tickets. [c3]",
+      "refused": false,
+      "route": "answered",
+      "citations": [
+        {
+          "marker": "c2",
+          "doc_id": "compensation-bands-2026-f214536e",
+          "section": "Compensation Framework 2026 > Salary Bands"
+        },
+        {
+          "marker": "c3",
+          "doc_id": "employee-handbook-2ee8b075",
+          "section": "Atlas Freight Employee Handbook > 7. Benefits"
+        }
+      ],
+      "n_searches": 1,
+      "queries": [
+        "Who must sign contracts above 2,000,000 MAD?"
+      ],
+      "retrieval_hit": null,
+      "reciprocal_rank": null,
+      "citation_precision": null,
+      "fact_recall": null,
+      "groundedness": 1.0,
+      "relevance": 0.333,
+      "claims": [
+        {
+          "claim": "Band A (operators, drivers, warehouse associates): 60,000 to 96,000",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        },
+        {
+          "claim": "Band B (coordinators, senior drivers, team leads): 96,000 to 150,000  Each employee has an annual learning budget of 6,000 MAD for courses, certifications and conference tickets.",
+          "supported": true,
+          "overlap": 1.0,
+          "numbers_ok": true
+        }
+      ],
+      "hallucinated": true,
+      "leaked": false,
+      "latency_ms": 4.4,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    }
+  ]
+}
